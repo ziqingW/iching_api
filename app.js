@@ -1,7 +1,6 @@
 const iching = require('i-ching');
 const express = require('express');
 const app = express();
-const cors = require('cors');
 const body_parser = require('body-parser');
 const pgp = require('pg-promise')({});
 let db_config = process.env.DATABASE_URL || {
@@ -12,7 +11,6 @@ let db_config = process.env.DATABASE_URL || {
 const db = pgp(db_config);
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended: false}));
 
