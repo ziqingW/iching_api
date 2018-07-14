@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const body_parser = require('body-parser');
 const pgp = require('pg-promise')({});
+const cors = require('cors');
 let db_config = process.env.DATABASE_URL || {
     host: "localhost",
     user: "postgres",
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended: false}));
-
+app.use(cors());
 app.get("/api", function(req, resp) {
     let reading = iching.ask().change;
     resp.json(reading);
