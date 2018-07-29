@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ziqingW/iching_api.png)](https://travis-ci.org/ziqingW/iching_api)
+
 # iching_api
 This is the server powered by Node.js and Express for the project "Ask Yingyang".
 
